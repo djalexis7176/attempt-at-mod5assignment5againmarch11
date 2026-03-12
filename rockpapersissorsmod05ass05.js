@@ -1,17 +1,25 @@
-1. Get and validate the User's choice
+//1. Get and validate the User's choice
 
 
 function getUserChoice() {
    
 
-    let choice = prompt("Enter rock (r), paper (p), or scissors(s):”).toLowerCase();
+    let choice = prompt("Enter rock (r), paper (p), or scissors(s):").toLowerCase();
     
    
 
     while (choice !== "r" && choice !== "p" && choice !== "s") {
         alert("Invalid entry! You must type (r) for rock, (p) for paper, or (s) for scissors.");
-        choice = prompt("Try again. Enter r or p or s :”).toLowerCase();
+        choice = prompt("Try again. Enter r or p or s :").toLowerCase();
     }
+   if (choice === "r") {
+        return "rock";
+    } else if (choice === "p") {
+        return "paper";
+    } else if (choice === "s") {
+        return "scissors";
+    }
+
     
     return choice;
 }
@@ -46,7 +54,7 @@ function determineWinner(user, computer) {
     
    //if user picks rock as choice
 
-    if (user === "r") {
+    if (user === "rock") {
         if (computer === "scissors") {
             return "You win! Rock destroys scissors.";
         } else {
@@ -56,7 +64,7 @@ function determineWinner(user, computer) {
     
      //if user picks paper as choice
 
-    if (user === "p") {
+    if (user === "paper") {
         if (computer === "rock") {
             return "You win! Paper covers rock.";
         } else {
@@ -66,7 +74,7 @@ function determineWinner(user, computer) {
     
    //if user picks scissors as choice
 
-    if (user === "s") {
+    if (user === "scissors") {
         if (computer === "paper") {
             return "You win! Scissors cut paper.";
         } else {
@@ -90,3 +98,4 @@ function playGame() {
 
 
 playGame();
+
